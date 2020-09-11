@@ -1,0 +1,208 @@
+//Header Part
+
+.header{
+    // background-color: darkolivegreen;
+    margin-bottom: 2rem;
+    height: 8vh;
+    // margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    color: black;
+
+    @media only screen and(max-width:$bp-large){
+        background-color: var(--gray-light-1);
+        position: fixed;
+        top: 0;
+        left: -40rem;
+        width: 30rem;
+        height: 100vh;
+        transition: all .2s;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+
+    }
+
+
+    svg{
+          width: 2.2rem;
+          height: 2.2rem;
+    }
+
+    &__link{
+        display: none;
+        width: 3rem;
+        height: 3rem;
+        @media only screen and (max-width:$bp-large){
+                display: block;
+                margin-top: 3rem;
+                border-radius: 50%;
+                border: 1px solid var(--gray-light-3);
+                align-self: flex-end;
+                margin-right: 4rem;
+                margin-bottom: 4rem;
+                order: -2;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+    }
+
+    &__logo{
+            margin-left: 2rem;
+            display: block;
+            margin-right: 10%;
+
+            @media only screen and(max-width:$bp-huge ){
+                margin-right: 5%;
+            }
+
+            @media only screen and (max-width:$bp-large){
+               width: 33%;
+               margin-left: 3rem;
+               margin-bottom: 1.7rem;
+            }
+           
+    }
+
+    &__nav{
+        // background-color: yellow;
+        flex: 1;
+        flex-shrink: 0;
+        margin-right: auto;
+
+        @media only screen and (max-width:$bp-large){
+            margin-top: 2rem;
+            flex: 0;
+            margin-left: 2rem;
+
+        }
+        &-list{
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+
+            @media only screen and (max-width:$bp-large){
+                flex-direction: column;
+                align-items: flex-start;
+                font-weight: bold; 
+                margin-bottom: 4rem; 
+            }
+
+            a{
+                font-size: 1.5rem;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                @media only screen and (max-width:$bp-large){
+                   color: black; 
+                }
+            }
+                
+            a::after{
+                content: "";
+                width: 0;
+                height: 2px;
+                background-color: var(--danger);
+                display: block;
+                margin-top: -.3rem;
+                transform: scaleX(0);
+                transform-origin:right;
+                transition: width .3s;
+
+                @media only screen and (max-width:$bp-large){
+                    content: "";
+                    width: 0;
+                    height: 0;
+                }
+            }
+
+            .active::after{
+                transform: scaleX(1);
+                width: 100%;
+            }
+                
+            a:hover::after{
+               transform: scaleX(1);
+               width: 100%;
+            }
+        }
+        
+        &-item{
+            margin-left: 3rem;
+            @media only screen and (max-width:$bp-large){
+               margin-left: 1.5rem;
+               margin-bottom: 1.3rem;
+            }
+        }
+    }
+
+    .registration{
+        //    background-color: cyan;
+            margin-right: 2rem;
+
+            @media only screen and (max-width:$bp-large){
+                margin-left: 3rem; 
+                font-size: 2rem;
+            }
+
+            .login,
+            .register{
+                text-decoration: none;
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: black;
+            }
+    }
+   
+
+    &__right{
+        // background-color: orange;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        
+        &>*{
+            margin-right: 2rem;
+        }
+
+        @media only screen and (max-width:$bp-large){
+            order: -1;
+            align-self: center;
+            margin-bottom: 3rem;
+            margin-left: 3rem;
+
+            justify-content: center;
+           
+           
+        }
+    }
+   
+   &__icon-box{
+            position: relative;
+            svg{
+                width: 2.2rem;
+                height: 2.2rem;
+            }
+
+            span{
+                font-size: 1.2rem;
+                height: 1.75rem;
+                width: 1.75rem;
+                border-radius: 50%;
+                color: #fff;
+                background-color: black;
+                position: absolute;
+                top: -1rem;
+                left: 2rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;     
+            }
+        }
+ }

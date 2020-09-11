@@ -1,0 +1,18 @@
+.main{
+    min-width: 100%;
+    display: grid;
+    grid-template-rows: 90vh repeat(7,min-content) ;
+    grid-template-columns: [full-start]repeat(2,1fr) [center-start] repeat(8,[col-start] minmax(min-content,15rem)[col-end])[center-end] repeat(2,1fr)[full-end];
+    // grid-row-gap: 2rem;
+    grid-gap: 1rem;
+
+
+    @media only screen and(max-width:$bp-large){
+        grid-template-rows: 90vh repeat(8,min-content) ;
+    }
+
+    @media only screen and(max-width:$bp-medium){
+        grid-template-rows: 90vh repeat(9,min-content) ;
+    }
+
+} 

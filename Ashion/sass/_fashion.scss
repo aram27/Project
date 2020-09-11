@@ -1,0 +1,136 @@
+//Mixin for both fashion__women and fashion__other
+@mixin gridDisplay {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,15vh);
+}
+//Main Fashion Section
+.main__fashion{
+   
+    &-women{
+        background-color: gray;
+        grid-column: full-start/ col-end 4;
+        @include gridDisplay();
+        background-image: url(../img/categories/category-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media only screen and(max-width:$bp-large){
+            grid-column: full-start/ full-end;
+        }
+
+        }
+
+    
+
+    &-box{
+    margin-left: 2rem;
+      grid-column: 1/-1;
+      grid-row: 3/span 3;
+
+    }
+
+    &-text{
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    // Main Fashion Other Section
+    &-other{
+        background-color: yellow;
+        grid-column: col-end 4 /full-end;
+
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 1rem;
+
+        .men-fashion{
+            grid-column: 1/2;
+            grid-row: 1/span 3;
+            background-image: url(../img/categories/category-2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @media only screen and(max-width:$bp-medium){
+                grid-column: 1/-1;
+                grid-row: 1/span 2;
+             }
+        }
+
+        .kid-fashion{
+            grid-column: 2/-1;
+            grid-row: 1/span 3;
+            background-image: url(../img/categories/category-3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @media only screen and(max-width:$bp-medium){
+                grid-column: 1/-1;
+                grid-row: 3/span 2;
+             }
+        }
+
+
+        .cosmetics{
+            grid-column: 1/2;
+            grid-row: 4/-1;
+            background-image: url(../img/categories/category-4.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @media only screen and(max-width:$bp-medium){
+                grid-column: 1/-1;
+                grid-row: 5/span 2;
+             }
+        }
+
+        .accessories{
+            grid-column: 2/-1;
+            grid-row: 4/-1;
+            background-image: url(../img/categories/category-5.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @media only screen and(max-width:$bp-medium){
+                grid-column: 1/-1;
+                grid-row: 7/span 2;
+             }
+        }
+
+       
+        .men-fashion, 
+        .kid-fashion,
+        .cosmetics,
+        .accessories {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .men-fashion__box,
+        .kid-fashion__box,
+        .cosmetics__box,
+        .accessories__box {
+            // margin-right: 4rem;
+            margin-left: 2rem;
+
+            p{
+                margin-bottom: 2rem;
+            }
+     }
+
+     @media only screen and(max-width:$bp-large){
+        grid-column: full-start/ full-end;
+        grid-template-rows: repeat(6, 15vh);
+     }
+
+     @media only screen and(max-width:$bp-medium){
+         grid-column: full-start/ full-end;
+        grid-template-columns: 1fr ;
+        grid-template-rows: repeat(8,25rem);
+     }
+ }
+
+}

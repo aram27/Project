@@ -1,0 +1,30 @@
+.group{
+    background-color: #fff;
+    height: 8vh;
+    margin-bottom: 2rem;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    &__logo{
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+    &__link{
+        // display: block;
+        margin-top: 1rem;
+        padding: .2rem;
+        border: 1px solid var(--gray-light-3);
+        margin-right: 2rem;
+   
+       i{ font-size: 3rem;}
+
+    }
+
+     display: none;
+
+    @media only screen and (max-width:$bp-large){
+        display: flex;
+    }
+}

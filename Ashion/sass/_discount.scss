@@ -1,0 +1,114 @@
+.main__discount{
+    
+    &-picture{
+        margin-top: 2rem;
+        // background-color: cyan;
+        grid-column: center-start/ col-end 4;
+        box-shadow: 1rem 1rem 1rem var(--gray-light-2);
+
+        @media only screen and(max-width:$bp-medium){
+           grid-column: full-start/ full-end;
+        }
+
+       img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    &-text{
+        margin-top: 2rem;
+        background-color: #f2f2f2;
+        grid-column: col-start 5 / center-end;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &>*{
+            z-index: 2;
+        }
+
+        .span-circle{
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            display: block;
+            background-color: #fff;
+            position: absolute;
+            top: 5rem;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+
+        span{
+            text-transform: uppercase;
+        }
+
+        .sale{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--danger);
+
+            span{
+                font-size: 1rem;
+                color: black;
+                margin-right: .5rem;
+            }
+        }
+
+        .heading-2--mtb{
+            margin-top: -1rem;
+            margin-bottom: -1rem;
+        }
+
+        @media only screen and(max-width:$bp-large){
+            grid-column: full-start/ full-end;
+            height: 55vh;
+            margin-top: 0;
+         }
+    }
+
+    &-group{
+        line-height: 1.5;
+        margin-top: 7rem;
+        margin-bottom: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-group-2{
+        margin-bottom: 8rem; 
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    &-timer{
+        margin-bottom: 1rem;
+        font-size: 2.7rem;
+        font-weight: bold;
+
+        span{
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-right: 2rem;
+            text-transform:none;
+        }
+    }
+
+    &-timer{
+       word-wrap: 1.2;
+    }
+}

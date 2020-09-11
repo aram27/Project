@@ -1,0 +1,72 @@
+//Mixin for pseudo elements
+@mixin elementAfter {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--danger);
+}
+
+.user-nav{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    // background-color: darkturquoise;
+    grid-column: center-start/ center-end;
+
+    &__box{
+        height: 10rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media only screen and (max-width:$bp-small){
+            flex-wrap: wrap;
+           &>*:not(:first-child){
+               margin-top: 2rem;
+           }
+        }
+        
+        .heading-4--caps{
+            position: relative;
+            flex-shrink: 0;
+            // margin-right: auto;
+        }
+
+        .heading-4--caps::after{
+            @include elementAfter;
+            width: 35%;
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+        }
+      
+    }
+    &__links{
+        // background-color: white;
+        width: 50rem;
+        flex-shrink: 0;
+
+    }
+
+    &__list{   
+        // background-color: yellow;
+        list-style: none;
+
+        display: flex;
+        justify-content:space-between;
+
+        &>*{
+            flex-shrink: 0;
+        }
+
+        a{
+            text-decoration: none;font-size: 1.3rem;
+        }
+
+    }
+    &__item:first-child::after{
+        @include elementAfter;
+        width: 100%;
+        margin-top: -.1rem;
+    }
+
+}

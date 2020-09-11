@@ -1,0 +1,59 @@
+//Main Trends Section
+.main__trends{
+        margin-top: 2rem;
+        // background-color: goldenrod;
+        grid-column: center-start/center-end;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+        grid-row-gap: 4rem;
+       
+
+        &-container-1, 
+        &-container-2,
+        &-container-3{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 2rem;
+        }
+
+        &-box-1,
+        &-box-2,
+        &-box-3 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+                margin-right: 2rem;
+            }
+
+            &-other{ flex: 1; }
+
+            p{font-weight: bold; }
+        }
+
+        .heading-4--thin{
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            &::after{
+                content: "";
+                width: 20%;
+                height: 2px;
+                display: block;
+                background-color: var(--danger);
+            }
+        }
+
+        svg{
+            width: 1rem;
+            height: 1rem;
+            fill: var(--yellow);
+        }
+}

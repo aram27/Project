@@ -1,0 +1,29 @@
+.main__services{
+    // background-color: lightcyan;
+    grid-column: center-start / center-end;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    &>*{
+        flex: 0 0 30rem;  
+        margin-bottom: 2rem;
+
+        display: flex;
+        align-items: center;
+
+        i{
+            color: var(--danger);
+            font-size: 3.5rem;
+            margin-right: 3rem;
+            margin-left: 4rem;
+        }
+
+        .heading-6--bold{
+            font-weight: bold;
+        }
+    }
+}

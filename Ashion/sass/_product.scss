@@ -1,0 +1,108 @@
+//Main Product Section
+.main__product {
+    // background-color: darkkhaki;
+    grid-column: center-start/ center-end;
+
+    //Main Product Cards
+    &-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
+        grid-gap: 4rem;
+    }
+
+    &-cards>* {
+        display: grid;
+        grid-row-gap: 1rem;
+        justify-items: center;
+        position: relative;
+      
+        &:hover .main__product-icon-others{
+             top: 50%;
+             opacity: 1;
+        }
+    }
+
+    &-text {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 0 1rem;
+        background-color: var(--green);
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    &--black{   background-color: var(--black); }
+    &--red{   background-color: var(--danger); }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    &-icons {
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--yellow);
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .red{
+            color: var(--danger);
+        }
+
+        span{
+            text-decoration: line-through;
+            font-size: 1.3rem;
+            color: var(--gray);
+        }
+    }
+
+    &-icon-others{
+        svg{
+            width: 4rem;
+            height: 4rem;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-left: 1rem;
+            padding: .5rem;
+            fill: var(--gray);
+        } 
+
+        transition: all .3s;
+        position: absolute;
+        top: 100%;
+        left: 20%;
+        opacity: 0;
+
+        @media only screen and(max-width:$bp-minimum){
+            left: 33%;
+        }
+    }
+
+}
+
+// @keyframes moveInTop{
+//     0%{
+//         transform: translateY(-100%);
+//         opacity: 0; 
+        
+//     }
+
+//     80%{
+//         transform: translateY(-300%);
+//         opacity: 1;
+//     }
+
+//     100%{
+//         transform: translateY(-250%);
+//     }
+// }

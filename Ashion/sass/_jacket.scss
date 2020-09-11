@@ -1,0 +1,48 @@
+.main__project-jacket{
+    background-color: green;
+    grid-column: full-start/ full-end;
+    margin-top: 2em;
+    background-image: url(../img/banner/banner-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:center;
+
+    }
+    &-box{
+        height: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-1{
+           transition: all 1s;
+           transform: translateX(-120%);
+           opacity: 0;
+           visibility: hidden;
+           position: relative;
+          
+    }
+
+    &-text{
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        color: var(--danger);
+    }
+ 
+    .circle>*{
+        background:var(--gray);
+        width: 1.1rem;
+        height: 1.1rem;
+        border: none;
+        border-radius: 50%;
+        margin-bottom: 10rem;
+        margin-right: .7rem;
+    }
+}
